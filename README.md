@@ -5,7 +5,7 @@
 
 **Learning Objectives**
 
-- Explain what MongoDB is.
+- Explain what MongoDB is .
 - Explain the difference between SQL and NoSQL.
 - Create a MongoDB Cluster on Atlas.
 - Connect your Spring Boot project with a MongoDB Cluster.
