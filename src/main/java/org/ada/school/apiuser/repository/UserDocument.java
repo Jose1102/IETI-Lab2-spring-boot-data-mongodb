@@ -1,5 +1,6 @@
 package org.ada.school.apiuser.repository;
 
+import org.ada.school.apiuser.dto.UserDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,18 +11,46 @@ import java.util.Date;
 public class UserDocument
 {
     @Id
-    String id;
+    private String id;
 
-    String name;
+    private String name;
 
     @Indexed( unique = true )
-    String email;
+    private String email;
 
-    String lastName;
+    private String lastName;
 
-    Date createdAt;
+    private Date createdAt;
 
-    public UserDocument()
+
+
+
+    public UserDocument(UserDto userDto)
     {
+        name = userDto.getName();
+        email = userDto.getEmail();
+        lastName = userDto.getLastName();
+        createdAt = userDto.getCreatedAt();
+
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
     }
 }

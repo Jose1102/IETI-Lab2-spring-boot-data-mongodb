@@ -2,6 +2,7 @@ package org.ada.school.apiuser.controller;
 
 import org.ada.school.apiuser.dto.UserDto;
 import org.ada.school.apiuser.model.User;
+import org.ada.school.apiuser.repository.UserDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,7 +30,7 @@ public class UserController
     }
 
 
-    @GetMapping
+    /*@GetMapping
     public ResponseEntity<List<User>> all()
     {
         return ResponseEntity.ok( userService.all() );
@@ -39,16 +40,16 @@ public class UserController
     public ResponseEntity<User> findById( @PathVariable String id )
     {
         return ResponseEntity.ok( userService.findById( id ) );
-    }
+    }*/
 
 
     @PostMapping
-    public ResponseEntity<User> create( @RequestBody UserDto userDto )
+    public ResponseEntity<UserDocument> create( @RequestBody UserDto userDto )
     {
-        return ResponseEntity.ok( userService.create( new User( userDto ) ) );
+        return ResponseEntity.ok( userService.create( new UserDocument( userDto ) ) );
     }
 
-    @PutMapping( "/{id}" )
+    /*@PutMapping( "/{id}" )
     public ResponseEntity<User> update(@RequestBody UserDto userDto, @PathVariable String id )
     {
         return ResponseEntity.ok( userService.update( userDto, id ) );
@@ -58,6 +59,6 @@ public class UserController
     public ResponseEntity<Boolean> delete( @PathVariable String id )
     {
         return ResponseEntity.ok( userService.deleteById( id ) );
-    }
+    }*/
 
 }
