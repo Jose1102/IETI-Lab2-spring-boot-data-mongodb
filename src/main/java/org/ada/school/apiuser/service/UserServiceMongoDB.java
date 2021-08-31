@@ -7,6 +7,7 @@ import org.ada.school.apiuser.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -59,6 +60,17 @@ public class UserServiceMongoDB
             return tempUser;
         }
 
+        return null;
+    }
+
+    @Override
+    public List<UserDocument> findUsersWithNameOrLastNameLike(String queryText) {
+        List<UserDocument> users = userRepository.findUsersWithNameOrLastNameLike(queryText);
+        return users;
+    }
+
+    @Override
+    public List<UserDocument> findUsersCreatedAfter(Date startDate) {
         return null;
     }
 }

@@ -3,9 +3,9 @@ package org.ada.school.apiuser.service;
 import org.ada.school.apiuser.dto.UserDto;
 import org.ada.school.apiuser.model.User;
 import org.ada.school.apiuser.repository.UserDocument;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -38,6 +38,16 @@ public class UserServiceHashMap implements UserService
 
     @Override
     public UserDocument update(UserDto userDto, String id) {
+        return null;
+    }
+
+    @Override
+    public List<UserDocument> findUsersWithNameOrLastNameLike(String queryText) {
+        return null;
+    }
+
+    @Override
+    public List<UserDocument> findUsersCreatedAfter(Date startDate) {
         return null;
     }
 }
