@@ -37,7 +37,7 @@ public class UserServiceMongoDB
     @Override
     public List<UserDocument> all() {
 
-        return null;
+        return userRepository.findAll();
     }
 
     @Override

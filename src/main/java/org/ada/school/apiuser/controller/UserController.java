@@ -30,11 +30,11 @@ public class UserController
     }
 
 
-    /*@GetMapping
-    public ResponseEntity<List<User>> all()
+    @GetMapping
+    public ResponseEntity<List<UserDocument>> all()
     {
         return ResponseEntity.ok( userService.all() );
-    }*/
+    }
 
     @GetMapping( "/{id}" )
     public ResponseEntity<UserDocument> findById( @PathVariable String id )
