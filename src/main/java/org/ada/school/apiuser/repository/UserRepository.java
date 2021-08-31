@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface UserRepository extends MongoRepository<UserDocument, String>
 {
-    @Query("{ $or : [{ 'name': ?0 },{'lastName': ?0}] }")
+    @Query("{ $or : [{ 'name': /?0/ },{'lastName': /?0/}] }")
     List<UserDocument> findUsersWithNameOrLastNameLike(String queryText);
 }
