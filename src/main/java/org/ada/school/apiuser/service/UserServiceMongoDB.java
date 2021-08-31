@@ -47,6 +47,13 @@ public class UserServiceMongoDB
 
     @Override
     public UserDocument update(UserDto userDto, String id) {
+        if(userRepository.existsById( id )){
+            UserDocument tempUser = userRepository.findById(id).get();
+            tempUser.update(userDto);
+            userRepository.save(tempUser);
+            return tempUser;
+        }
+
         return null;
     }
 }

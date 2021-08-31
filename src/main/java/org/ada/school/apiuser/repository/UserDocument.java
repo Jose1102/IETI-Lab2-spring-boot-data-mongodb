@@ -56,4 +56,14 @@ public class UserDocument
     public Date getCreatedAt() {
         return createdAt;
     }
+
+
+    public void update(UserDto userDto) {
+
+        name = userDto.getName();
+        email = userDto.getEmail();
+        lastName = userDto.getLastName();
+        createdAt = userDto.getCreatedAt();
+
+    }
 }

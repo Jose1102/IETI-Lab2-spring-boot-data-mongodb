@@ -49,13 +49,13 @@ public class UserController
         return ResponseEntity.ok( userService.create( new UserDocument( userDto ) ) );
     }
 
-    /*@PutMapping( "/{id}" )
-    public ResponseEntity<User> update(@RequestBody UserDto userDto, @PathVariable String id )
+    @PutMapping( "/{id}" )
+    public ResponseEntity<UserDocument> update(@RequestBody UserDto userDto, @PathVariable String id )
     {
         return ResponseEntity.ok( userService.update( userDto, id ) );
     }
 
-    @DeleteMapping( "/{id}" )
+    /*@DeleteMapping( "/{id}" )
     public ResponseEntity<Boolean> delete( @PathVariable String id )
     {
         return ResponseEntity.ok( userService.deleteById( id ) );
