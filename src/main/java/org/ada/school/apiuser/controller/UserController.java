@@ -34,13 +34,13 @@ public class UserController
     public ResponseEntity<List<User>> all()
     {
         return ResponseEntity.ok( userService.all() );
-    }
+    }*/
 
     @GetMapping( "/{id}" )
-    public ResponseEntity<User> findById( @PathVariable String id )
+    public ResponseEntity<UserDocument> findById( @PathVariable String id )
     {
         return ResponseEntity.ok( userService.findById( id ) );
-    }*/
+    }
 
 
     @PostMapping

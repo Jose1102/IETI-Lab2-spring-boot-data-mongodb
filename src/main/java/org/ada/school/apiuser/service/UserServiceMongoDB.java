@@ -18,6 +18,7 @@ public class UserServiceMongoDB
 
     public UserServiceMongoDB(@Autowired UserRepository userRepository )
     {
+
         this.userRepository = userRepository;
     }
 
@@ -29,11 +30,13 @@ public class UserServiceMongoDB
 
     @Override
     public UserDocument findById(String id) {
-        return null;
+
+        return userRepository.findById(id).orElse(null);
     }
 
     @Override
     public List<UserDocument> all() {
+
         return null;
     }
 

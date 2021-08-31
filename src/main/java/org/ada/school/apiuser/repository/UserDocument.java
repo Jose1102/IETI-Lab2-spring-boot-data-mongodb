@@ -34,6 +34,9 @@ public class UserDocument
 
     }
 
+    public UserDocument() {
+    }
+
     public String getId() {
         return id;
     }
