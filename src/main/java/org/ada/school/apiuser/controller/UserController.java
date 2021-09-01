@@ -1,13 +1,15 @@
 package org.ada.school.apiuser.controller;
 
 import org.ada.school.apiuser.dto.UserDto;
-import org.ada.school.apiuser.model.User;
 import org.ada.school.apiuser.repository.UserDocument;
+import org.apache.el.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import org.ada.school.apiuser.service.UserService;
+
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -20,6 +22,13 @@ public class UserController
     public UserController( @Autowired UserService userService )
     {
         this.userService = userService;
+    }
+
+    @GetMapping("/date")
+    public ResponseEntity<List<UserDocument>> findUsersCreatedAfter(@RequestParam Date startDate){
+
+
+        return ResponseEntity.ok(userService.findUsersCreatedAfter(startDate));
     }
 
     @GetMapping("/search")
